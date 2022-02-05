@@ -1,0 +1,53 @@
+-- Find the most popular Hacker News stories
+ 
+ SELECT title, score
+ FROM hacker_news
+ ORDER BY score DESC
+ LIMIT 5;
+ 
+-- Hacker News Moderating
+
+ SELECT SUM(score) AS 'Total scores'
+ FROM hacker_news;
+ 
+SELECT user, SUM(score) AS 'Score_total'
+ FROM hacker_news
+ GROUP BY user
+ HAVING Score_total > 200;
+ 
+SELECT ROUND((309.0+304.0+282.0+517.0)/6366.0,4)
+AS 'Top Users Participation rate';
+
+SELECT user, COUNT(url) AS
+'Fake Posts'
+FROM (hacker_news)
+WHERE url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+GROUP BY user;
+
+--Sites that feed Hacker News
+
+SELECT CASE
+  WHEN url LIKE
+'%github.com%' THEN 'GitHub'
+  WHEN url LIKE
+  '%medium.com%' THEN 'Medium'
+  WHEN url LIKE
+  '%newyorktimes.com%' THEN
+  'New York Times'
+  ELSE 'Other sources'
+  END AS 'Source',
+  COUNT(*) AS 'Number of links'
+FROM hacker_news
+GROUP BY 1;
+
+-- What's the best time to post a story?
+
+SELECT 
+strftime('%H', timestamp) AS
+  'Hours', 
+  ROUND(AVG(score)) AS 'Average Score',
+  COUNT(title) AS 'Stories/hour'
+FROM hacker_news
+WHERE Hours IS NOT NULL
+GROUP BY 1
+ORDER BY 1;
