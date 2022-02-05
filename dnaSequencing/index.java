@@ -21,3 +21,4 @@ class DNA {
             System.out.println("No protein...");
         };
     }
+ }
