@@ -1,7 +1,7 @@
 app.controller('MainController', ['$scope', function($scope) {
   $scope.program = {
   series: "Sherlock",
-  series_img: "https://flxt.tmsimg.com/assets/p8204516_b_h8_ap.jpg",
+  series_img: "https://content.codecademy.com/projects/4/bolt-network-1/img/sherlock.jpg",
   genre: "Crime drama",
   season: 3,
   episode: "The Empty Hearse",
