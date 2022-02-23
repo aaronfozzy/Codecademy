@@ -3,10 +3,10 @@ app.controller('PostController', ['$scope', function($scope) {
     {
       author: {
         name: 'Calvin Broadus, Jr.',
-        avatar: 'img/cbj.svg'
+        avatar: 'https://content.codecademy.com/projects/4/feedster/img/cbj.svg'
       },
       comment: {
-        img: 'img/dog.jpg',
+        img: 'https://content.codecademy.com/projects/4/feedster/img/cbj.svg',
         text: 'How much for that dogg in the window?'
       }
     },
@@ -15,7 +15,7 @@ app.controller('PostController', ['$scope', function($scope) {
     {
       author: {
         name: 'Matthew Healy',
-        avatar: 'img/mh.svg'
+        avatar: 'https://content.codecademy.com/projects/4/feedster/img/mh.svg'
       },
       comment: {
         text: 'I used to have a recurring dream when I was younger.'
